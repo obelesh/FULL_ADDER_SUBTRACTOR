@@ -38,18 +38,78 @@ Borrow out = A'Bin + A'B + BBin
 
 **Truthtable**
 
+![Screenshot 2024-12-22 213140](https://github.com/user-attachments/assets/ed4ca22e-34f1-4374-a3a6-db659052c7ce)
+
+![Screenshot 2024-12-22 213153](https://github.com/user-attachments/assets/dba5193b-a8bb-410b-8e0e-47e69493b15a)
+
+![Screenshot 2024-12-22 213204](https://github.com/user-attachments/assets/1e04ed76-3492-4a66-b785-33387230cc74)
+
+![Screenshot 2024-12-22 213221](https://github.com/user-attachments/assets/38d0c5f9-7094-40ae-b7ec-fea62e05168e)
+
+
 **Procedure**
 
 Write the detailed procedure here
 
 **Program:**
 
-/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
-*/
+/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming.Developed by: RegisterNumber:
+*/ OBELESH R (24901123)
+
+```
+ module exp4(sum,cout,a,b,cin);
+ output sum;
+ output cout;
+ input a;
+ input b; 
+ input cin;
+ wire s1,c1,c2;
+ xor(s1,a,b);
+ and(c1,a,b);
+ xor(sum,s1,cin);
+ and(c2,s1,cin);
+ or(cout,c2,c1);
+ endmodule
+
+```
+
+```
+module exp4b(df,bo,a,b,bin);
+output df;
+output bo;
+input a;
+input b;
+input bin;
+wire w1,w2,w3;
+assign w1=a^b;
+assign w2=(~a&b);
+assign w3=(~w1&bin);
+assign df=w1^bin;
+assign bo=w2|w3;
+endmodule
+
+```
 
 **RTL Schematic**
 
+**Full adder**
+
+![Screenshot 2024-12-22 214914](https://github.com/user-attachments/assets/35ee6767-f36a-4e43-89bf-812f33dfe9f2)
+
+**full substractor**
+
+![Screenshot 2024-12-22 214927](https://github.com/user-attachments/assets/3064384a-df78-403c-bb27-a36f46756f9e)
+
+
 **Output Timing Waveform**
+
+**Full Adder**
+
+![Screenshot 2024-12-22 214945](https://github.com/user-attachments/assets/576dcdaa-85c4-4a51-b0a4-5882b4d9e7ab)
+
+**Full substractor**
+
+![Screenshot 2024-12-22 215002](https://github.com/user-attachments/assets/755c5441-726a-49cb-a1f9-ed444d590759)
 
 **Result:**
 
